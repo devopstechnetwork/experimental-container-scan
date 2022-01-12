@@ -11,4 +11,4 @@ jobs:
       - run: docker build . -t experimental:verify
       - uses: Azure/container-scan@v0
         with:
-          image-name: groundhog2k/experimental:verify
+          image-name: experimental:verify
