@@ -4,11 +4,27 @@ on:
       - main
 
 jobs:
-  verify-image:
+  verify-alpine-3_14:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - run: docker build . -t experimental:verify
       - uses: Azure/container-scan@v0
         with:
-          image-name: experimental:verify
+          image-name: alpine:3.14
+  verify-alpine-latest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Azure/container-scan@v0
+        with:
+          image-name: alpine:latest
+  verify-debian-11-slim:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Azure/container-scan@v0
+        with:
+          image-name: debian:11-slim
+  verify-debian-bookworm-slim:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Azure/container-scan@v0
+        with:
+          image-name: debian:bookworm-slim
