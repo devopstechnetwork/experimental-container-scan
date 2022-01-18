@@ -28,3 +28,9 @@ jobs:
       - uses: Azure/container-scan@v0
         with:
           image-name: debian:bookworm-slim
+  verify-distroless-python3:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Azure/container-scan@v0
+        with:
+          image-name: gcr.io/distroless/python3:latest
